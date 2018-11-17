@@ -57,11 +57,6 @@ public class City_Activity extends MyActivity implements City_Interface {
 
             }
         });
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         set_font();
         set_animation();
     }
