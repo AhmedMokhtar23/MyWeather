@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/app_backgroung">
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row1_top" app:layout_constraintGuide_percent=".15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row1_bottom" app:layout_constraintGuide_percent=".25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row1_left" app:layout_constraintGuide_percent=".35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row1_right" app:layout_constraintGuide_percent=".65"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <Button android:id="@+id/main_btn_mycity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Cairo"
+        android:textColor="@color/yellow"
+        android:background="@color/btn_color"
+        android:onClick="select_city"
+        app:layout_constraintLeft_toLeftOf="@id/main_gd_row1_left"
+        app:layout_constraintRight_toRightOf="@id/main_gd_row1_right"
+        app:layout_constraintTop_toTopOf="@id/main_gd_row1_top"
+        app:layout_constraintBottom_toBottomOf="@id/main_gd_row1_bottom"/>
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row2_top" app:layout_constraintGuide_percent=".37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row2_bottom" app:layout_constraintGuide_percent=".47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row2_clmn1_left" app:layout_constraintGuide_percent=".1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row2_clmn1_right" app:layout_constraintGuide_percent=".4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <Button android:id="@+id/main_btn_city1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Port Said"
+        android:textColor="@color/yellow"
+        android:background="@color/btn_color"
+        app:layout_constraintLeft_toLeftOf="@id/main_gd_row2_clmn1_left"
+        app:layout_constraintRight_toRightOf="@id/main_gd_row2_clmn1_right"
+        app:layout_constraintTop_toTopOf="@id/main_gd_row2_top"
+        app:layout_constraintBottom_toBottomOf="@id/main_gd_row2_bottom"/>
+
+
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row2_clmn2_left" app:layout_constraintGuide_percent=".6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row2_clmn2_right" app:layout_constraintGuide_percent=".9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <Button android:id="@+id/main_btn_city2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Suez"
+        android:textColor="@color/yellow"
+        android:background="@color/btn_color"
+        app:layout_constraintLeft_toLeftOf="@id/main_gd_row2_clmn2_left"
+        app:layout_constraintRight_toRightOf="@id/main_gd_row2_clmn2_right"
+        app:layout_constraintTop_toTopOf="@id/main_gd_row2_top"
+        app:layout_constraintBottom_toBottomOf="@id/main_gd_row2_bottom"/>
+
+
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row3_top" app:layout_constraintGuide_percent=".6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row3_bottom" app:layout_constraintGuide_percent=".7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row3_clmn1_left" app:layout_constraintGuide_percent=".15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row3_clmn1_right" app:layout_constraintGuide_percent=".45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <Button android:id="@+id/main_btn_city3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Luxor"
+        android:textColor="@color/yellow"
+        android:background="@color/btn_color"
+        app:layout_constraintLeft_toLeftOf="@id/main_gd_row3_clmn1_left"
+        app:layout_constraintRight_toRightOf="@id/main_gd_row3_clmn1_right"
+        app:layout_constraintTop_toTopOf="@id/main_gd_row3_top"
+        app:layout_constraintBottom_toBottomOf="@id/main_gd_row3_bottom"/>
+
+
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row3_clmn2_left" app:layout_constraintGuide_percent=".55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+    <android.support.constraint.Guideline android:id="@+id/main_gd_row3_clmn2_right" app:layout_constraintGuide_percent=".85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <Button android:id="@+id/main_btn_city4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Ismailia"
+        android:textColor="@color/yellow"
+        android:background="@color/btn_color"
+        app:layout_constraintLeft_toLeftOf="@id/main_gd_row3_clmn2_left"
+        app:layout_constraintRight_toRightOf="@id/main_gd_row3_clmn2_right"
+        app:layout_constraintTop_toTopOf="@id/main_gd_row3_top"
+        app:layout_constraintBottom_toBottomOf="@id/main_gd_row3_bottom"/>
+
+    <android.support.constraint.Guideline android:id="@+id/gd_contactus_top" app:layout_constraintGuide_percent=".8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+    <android.support.constraint.Guideline android:id="@+id/gd_contactus_bottom" app:layout_constraintGuide_percent=".9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+    <android.support.constraint.Guideline android:id="@+id/gd_contactus_left" app:layout_constraintGuide_percent=".3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+    <android.support.constraint.Guideline android:id="@+id/gd_contactus_right" app:layout_constraintGuide_percent=".7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Contact Us"
+        android:textSize="15sp"
+        android:textColor="@color/yellow"
+        android:background="#78006400"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
+        android:onClick="contact_us"
+        app:layout_constraintTop_toBottomOf="@id/gd_contactus_top"
+        app:layout_constraintBottom_toTopOf="@id/gd_contactus_bottom"
+        app:layout_constraintLeft_toRightOf="@id/gd_contactus_left"
+        app:layout_constraintRight_toLeftOf="@id/gd_contactus_right"/>
+
+</android.support.constraint.ConstraintLayout>
