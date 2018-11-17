@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import org.threeten.bp.DayOfWeek;
@@ -30,7 +31,8 @@ public class City_Activity extends MyActivity implements City_Interface {
         on_connecting();
         controller = new City_Controller(this);
         weather_city = null;
-        controller.get_city("Cairo");
+        ((TextView)findViewById(R.id.city_txtv_city)).setText(getIntent().getStringExtra("city"));
+        controller.get_city(getIntent().getStringExtra("city"));
         ((Spinner)(findViewById(R.id.city_sp_day))).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -87,19 +89,32 @@ public class City_Activity extends MyActivity implements City_Interface {
     }
 
     @Override
-    public void on_loaded(Weather_City city) {
+    public void on_loadedFromAPI(Weather_City city) {
+        Toast.makeText(this,"Forcast Loaded Online",Toast.LENGTH_LONG).show();
+        on_loaded(city);
+    }
+
+    @Override
+    public void onloadedFromStorage(Weather_City city) {
+        Toast.makeText(this,"Forcast Loaded OffLine",Toast.LENGTH_LONG).show();
+        on_loaded(city);
+    }
+
+    @Override
+    public void onFailed() {
+        abort_connection(null);
+        show_message("Ther Is No Connection And There Is No Offline Data",R.drawable.ic_error);
+    }
+
+    private void on_loaded(Weather_City city){
         abort_connection(null);
         weather_city = city;
         set_day_spinner();
     }
 
     @Override
-    public void on_going_offline() {
-
-    }
-
-    @Override
-    public void on_corrupted_data() {
-
+    public void abort_connection(View v) {
+        super.abort_connection(v);
+        controller.Abort_Connection();
     }
 }

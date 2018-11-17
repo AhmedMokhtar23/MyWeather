@@ -5,11 +5,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/app_backgroung">
 
-    <android.support.constraint.Guideline android:id="@+id/city_gd_spinners_top" app:layout_constraintGuide_percent=".05"
+
+    <android.support.constraint.Guideline android:id="@+id/main_gd_city" app:layout_constraintGuide_percent=".05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
-    <android.support.constraint.Guideline android:id="@+id/city_gd_spinners_bottom" app:layout_constraintGuide_percent=".15"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/main_gd_city"
+        app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn1_left">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weather For "
+            android:textColor="@color/yellow"
+            android:textSize="16sp"/>
+        <TextView android:id="@+id/city_txtv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/yellow"
+            android:text="Cairo"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <android.support.constraint.Guideline android:id="@+id/city_gd_spinners_top" app:layout_constraintGuide_percent=".15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+    <android.support.constraint.Guideline android:id="@+id/city_gd_spinners_bottom" app:layout_constraintGuide_percent=".25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
@@ -46,7 +72,7 @@
             android:layout_height="wrap_content"
             android:text="Day"
             android:textColor="@color/yellow"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
         <Spinner android:id="@+id/city_sp_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,17 +92,17 @@
             android:layout_height="wrap_content"
             android:text="Period"
             android:textColor="@color/yellow"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
         <Spinner android:id="@+id/city_sp_periods"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row1_top" app:layout_constraintGuide_percent=".2"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row1_top" app:layout_constraintGuide_percent=".3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row1_bottom" app:layout_constraintGuide_percent=".34"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row1_bottom" app:layout_constraintGuide_percent=".44"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
@@ -188,11 +214,11 @@
 
     </LinearLayout>
 
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row2_top" app:layout_constraintGuide_percent=".37"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row2_top" app:layout_constraintGuide_percent=".47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row2_bottom" app:layout_constraintGuide_percent=".5"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row2_bottom" app:layout_constraintGuide_percent=".6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
@@ -285,11 +311,11 @@
     </LinearLayout>
     </LinearLayout>
 
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row3_top" app:layout_constraintGuide_percent=".53"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row3_top" app:layout_constraintGuide_percent=".63"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row3_bottom" app:layout_constraintGuide_percent=".6"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row3_bottom" app:layout_constraintGuide_percent=".7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
@@ -340,11 +366,11 @@
 
     </LinearLayout>
 
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row4_top" app:layout_constraintGuide_percent=".63"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row4_top" app:layout_constraintGuide_percent=".73"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row4_bottom" app:layout_constraintGuide_percent=".7"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row4_bottom" app:layout_constraintGuide_percent=".8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>

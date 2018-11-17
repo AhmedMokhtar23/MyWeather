@@ -48,4 +48,8 @@ public class Weather_City {
     public HashMap<DayOfWeek, HashMap<String, Weather_Period>> getDays() {
         return Days;
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -1,9 +1,15 @@
 package me5atech.myweather.Views.Splash;
 
+import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -35,7 +41,12 @@ public class Splash_Activity extends MyActivity implements Splash_Interface {
     }
 
     @Override
-    public void on_corrupted_data() {
+    public void request_permissions(String[] permissions) {
+        ActivityCompat.requestPermissions(this,permissions,0);
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        on_success();
     }
 }

@@ -16,7 +16,7 @@ import android.widget.TextView;
 import me5atech.myweather.Models.Globals;
 import me5atech.myweather.R;
 
-public abstract class MyActivity extends AppCompatActivity implements MyInterface,Message_interface {
+public abstract class MyActivity extends AppCompatActivity implements Message_interface {
 
 
     protected Boolean Screen_Locked = false;
@@ -139,12 +139,6 @@ public abstract class MyActivity extends AppCompatActivity implements MyInterfac
         set_controls_enability(false);
         get_main_view().addView(v);
         Screen_Locked = true;
-    }
-
-    @Override
-    public void on_connection_error() {
-        abort_connection(null);
-        show_message("Make sure you have internet connection", R.drawable.ic_wifi);
     }
 
 }

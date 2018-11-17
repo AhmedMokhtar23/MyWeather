@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.Button;
 
 import me5atech.myweather.R;
 import me5atech.myweather.Views.City.City_Activity;
@@ -14,11 +15,6 @@ public class Main_Activity extends MyActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         set_font();
         set_animation();
     }
@@ -28,11 +24,8 @@ public class Main_Activity extends MyActivity {
     }
 
     public void select_city(View v){
-        startActivity(new Intent(this,City_Activity.class));
-    }
-
-    @Override
-    public void on_corrupted_data() {
-
+        Intent i = new Intent(this,City_Activity.class);
+        i.putExtra("city",((Button)v).getText().toString());
+        startActivity(i);
     }
 }
