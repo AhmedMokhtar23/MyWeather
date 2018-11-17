@@ -2,12 +2,17 @@ package me5atech.myweather.Views.City;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
-import java.time.DayOfWeek;
-import java.util.Collection;
+
+import org.threeten.bp.DayOfWeek;
+
 import java.util.HashMap;
 
+import me5atech.myweather.Controllers.City.City_Controller;
 import me5atech.myweather.Models.Weather_City;
 import me5atech.myweather.Models.Weather_Period;
 import me5atech.myweather.R;
@@ -16,12 +21,42 @@ import me5atech.myweather.Views.MyActivity;
 public class City_Activity extends MyActivity implements City_Interface {
 
     Weather_City weather_city;
+    City_Controller controller;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.city_layout);
         on_connecting();
+        controller = new City_Controller(this);
+        weather_city = null;
+        controller.get_city("Cairo");
+        ((Spinner)(findViewById(R.id.city_sp_day))).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(weather_city != null){
+                    set_period_spinner();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        ((Spinner)(findViewById(R.id.city_sp_periods))).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(weather_city != null){
+                    apply_model(parent.getSelectedItem().toString());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     @Override
@@ -31,25 +66,45 @@ public class City_Activity extends MyActivity implements City_Interface {
         set_animation();
     }
 
-    private void set_spinners(){
+    private void set_day_spinner(){
         Spinner spinner = findViewById(R.id.city_sp_day);
         HashMap<DayOfWeek,HashMap<String,Weather_Period>> weather_days = weather_city.getDays();
-        String[] days = (String[]) weather_days.keySet().toArray(new String[weather_days.keySet().size()]);
-        spinner.setAdapter(new Spinner_Adapter<>(this,weather_days.keySet().toArray(new DayOfWeek[5])));
-        spinner.setSelection(0);
-        String[] periodsString = new String[4];
-        Weather_Period[] periods = weather_days.get(days[0]).values().toArray(new Weather_Period[4]);
-        for(int i=0;i<4;i++){
-            periodsString[i] = periods[i].getPeriod();
-        }
-        spinner = findViewById(R.id.city_sp_periods);
-        spinner.setAdapter(new Spinner_Adapter<>(this,periodsString));
+        spinner.setAdapter(new Spinner_Adapter<>(this,weather_days.keySet().toArray(new DayOfWeek[weather_days.keySet().size()])));
+        set_period_spinner();
+    }
+    private void set_period_spinner(){
+        Spinner spinner = findViewById(R.id.city_sp_periods);
+        HashMap<String,Weather_Period> periods = weather_city.getDays().get(((Spinner)findViewById(R.id.city_sp_day)).getSelectedItem());
+        spinner.setAdapter(new Spinner_Adapter<>(this,periods.values().toArray(new Weather_Period[periods.values().size()])));
+        apply_model(spinner.getSelectedItem().toString());
+    }
+
+    private void apply_model(String periodstring){
+        Weather_Period period = weather_city.getDays().get(((Spinner)findViewById(R.id.city_sp_day)).getSelectedItem()).
+                get(periodstring);
+        ((TextView)findViewById(R.id.city_txtv_tmp)).setText(period.getTemp_average() + "");
+        ((TextView)findViewById(R.id.city_txtv_tmp_min)).setText(period.getTemp_min() + "");
+        ((TextView)findViewById(R.id.city_txtv_tmp_max)).setText(period.getTemp_max() + "");
+        ((TextView)findViewById(R.id.city_txtv_windspeed)).setText(period.getWind_speed() + "");
+        ((TextView)findViewById(R.id.city_txtv_winddegree)).setText(period.getWind_degree() + "");
+        ((TextView)findViewById(R.id.city_txtv_humidity)).setText(period.getHumidity() + "");
+        ((TextView)findViewById(R.id.city_txtv_pressure)).setText(period.getPressur() + "");
     }
 
     @Override
     public void on_loaded(Weather_City city) {
         abort_connection(null);
         weather_city = city;
-        set_spinners();
+        set_day_spinner();
+    }
+
+    @Override
+    public void on_going_offline() {
+
+    }
+
+    @Override
+    public void on_corrupted_data() {
+
     }
 }

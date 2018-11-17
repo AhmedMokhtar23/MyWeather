@@ -30,4 +30,9 @@ public class Main_Activity extends MyActivity {
     public void select_city(View v){
         startActivity(new Intent(this,City_Activity.class));
     }
+
+    @Override
+    public void on_corrupted_data() {
+
+    }
 }

@@ -19,8 +19,7 @@ public class Splash_Controller {
 
     public void can_start(){
         if(!internet_available()){
-            //UI.on_connection_error();
-            UI.on_success();
+            UI.on_connection_error();
         }else{
            UI.on_success();
         }

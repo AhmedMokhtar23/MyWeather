@@ -33,4 +33,9 @@ public class Splash_Activity extends MyActivity implements Splash_Interface {
         Globals.font_difference = controller.get_font_difference();
         startActivity(new Intent(this,Main_Activity.class));
     }
+
+    @Override
+    public void on_corrupted_data() {
+
+    }
 }

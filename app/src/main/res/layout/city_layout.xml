@@ -36,6 +36,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/city_gd_spinners_top"
         app:layout_constraintBottom_toTopOf="@id/city_gd_spinners_bottom"
         app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn1_left"
@@ -47,13 +48,15 @@
             android:textColor="@color/yellow"
             android:textSize="18sp"/>
         <Spinner android:id="@+id/city_sp_day"
-            android:layout_width="0dp"
-            android:layout_height="0dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/city_gd_spinners_top"
         app:layout_constraintBottom_toTopOf="@id/city_gd_spinners_bottom"
         app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn2_left"
@@ -65,126 +68,164 @@
             android:textColor="@color/yellow"
             android:textSize="18sp"/>
         <Spinner android:id="@+id/city_sp_periods"
-            android:layout_width="0dp"
-            android:layout_height="0dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row1" app:layout_constraintGuide_percent=".2"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row1_top" app:layout_constraintGuide_percent=".2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row1_bottom" app:layout_constraintGuide_percent=".34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         android:background="#10FFFFFF"
-        android:padding="20dp"
         app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn1_left"
         app:layout_constraintRight_toLeftOf="@id/city_gd_spinners_clmn2_right"
-        app:layout_constraintTop_toBottomOf="@id/city_gd_row1">
+        app:layout_constraintTop_toBottomOf="@id/city_gd_row1_top"
+        app:layout_constraintBottom_toTopOf="@id/city_gd_row1_bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="50sp"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Temperature   "
-                android:textColor="@color/yellow"
-                android:textSize="15sp" />
-            <TextView android:id="@+id/city_txtv_tmp"
+                android:text=" "
+                android:textSize="3sp"/>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="--"
-                android:textSize="15sp"
-                android:textColor="@color/yellow"/>
-            <TextView
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature   "
+                    android:textColor="@color/yellow"
+                    android:textSize="13sp" />
+                <TextView android:id="@+id/city_txtv_tmp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textSize="13sp"
+                    android:textColor="@color/yellow"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" c°"
+                    android:textSize="13sp"
+                    android:textColor="@color/yellow"/>
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" C"
-                android:textSize="15sp"
-                android:textColor="@color/yellow"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     "
+                    android:textSize="13sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Min   "
+                    android:textColor="@color/yellow"
+                    android:textSize="13sp" />
+                <TextView android:id="@+id/city_txtv_tmp_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textSize="13sp"
+                    android:textColor="@color/yellow"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" c°"
+                    android:textSize="13sp"
+                    android:textColor="@color/yellow"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="     "
+                    android:textSize="13sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Max   "
+                    android:textColor="@color/yellow"
+                    android:textSize="13sp" />
+                <TextView android:id="@+id/city_txtv_tmp_max"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textSize="13sp"
+                    android:textColor="@color/yellow"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" c°"
+                    android:textSize="13sp"
+                    android:textColor="@color/yellow"/>
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="     "
-                android:textSize="15sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Min   "
-                android:textColor="@color/yellow"
-                android:textSize="15sp" />
-            <TextView android:id="@+id/city_txtv_tmp_min"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="--"
-                android:textSize="15sp"
-                android:textColor="@color/yellow"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" C"
-                android:textSize="15sp"
-                android:textColor="@color/yellow"/>
-        </LinearLayout>
-        <LinearLayout
+
+
+    </LinearLayout>
+
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row2_top" app:layout_constraintGuide_percent=".37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="     "
-                android:textSize="15sp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Max   "
-            android:textColor="@color/yellow"
-            android:textSize="15sp" />
-        <TextView android:id="@+id/city_txtv_max"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="--"
-            android:textSize="15sp"
-            android:textColor="@color/yellow"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" C"
-            android:textSize="15sp"
-            android:textColor="@color/yellow"/>
-    </LinearLayout>
-
-    </LinearLayout>
-
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row2" app:layout_constraintGuide_percent=".42"
+        android:orientation="horizontal"/>
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row2_bottom" app:layout_constraintGuide_percent=".5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         android:background="#10FFFFFF"
-        android:padding="20dp"
-        app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn1_left"
+      app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn1_left"
         app:layout_constraintRight_toLeftOf="@id/city_gd_spinners_clmn2_right"
-        app:layout_constraintTop_toBottomOf="@id/city_gd_row2">
+        app:layout_constraintTop_toBottomOf="@id/city_gd_row2_top"
+        app:layout_constraintBottom_toTopOf="@id/city_gd_row2_bottom">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textSize="50sp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="3sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wind "
             android:textColor="@color/yellow"
-            android:textSize="15sp" />
+            android:textSize="13sp" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -193,24 +234,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="     "
-                android:textSize="15sp" />
+                android:textSize="13sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Speed   "
                 android:textColor="@color/yellow"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
             <TextView android:id="@+id/city_txtv_windspeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="--"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="@color/yellow"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" m/s"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="@color/yellow"/>
         </LinearLayout>
         <LinearLayout
@@ -221,63 +262,137 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="     "
-                android:textSize="15sp" />
+                android:textSize="13sp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Degree   "
                 android:textColor="@color/yellow"
-                android:textSize="15sp" />
+                android:textSize="13sp" />
             <TextView android:id="@+id/city_txtv_winddegree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="--"
-                android:textSize="15sp"
+                android:textSize="13sp"
                 android:textColor="@color/yellow"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" "
-                android:textSize="15sp"
+                android:text=" °"
+                android:textSize="13sp"
                 android:textColor="@color/yellow"/>
         </LinearLayout>
-
+    </LinearLayout>
     </LinearLayout>
 
-    <android.support.constraint.Guideline android:id="@+id/city_gd_row3" app:layout_constraintGuide_percent=".65"
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row3_top" app:layout_constraintGuide_percent=".53"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row3_bottom" app:layout_constraintGuide_percent=".6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         android:background="#10FFFFFF"
-        android:padding="20dp"
         app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn1_left"
         app:layout_constraintRight_toLeftOf="@id/city_gd_spinners_clmn2_right"
-        app:layout_constraintTop_toBottomOf="@id/city_gd_row3">
+        app:layout_constraintTop_toBottomOf="@id/city_gd_row3_top"
+        app:layout_constraintBottom_toTopOf="@id/city_gd_row3_bottom">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Humidity   "
-            android:textColor="@color/yellow"
-            android:textSize="15sp" />
-        <TextView android:id="@+id/city_txtv_humidity"
+            android:text=" "
+            android:textSize="3sp"/>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="--"
-            android:textSize="15sp"
-            android:textColor="@color/yellow"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" %"
-            android:textSize="15sp"
-            android:textColor="@color/yellow"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      "
+                android:textSize="10sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity   "
+                android:textColor="@color/yellow"
+                android:textSize="13sp" />
+            <TextView android:id="@+id/city_txtv_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="13sp"
+                android:textColor="@color/yellow"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" %"
+                android:textSize="13sp"
+                android:textColor="@color/yellow"/>
+        </LinearLayout>
+
 
     </LinearLayout>
 
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row4_top" app:layout_constraintGuide_percent=".63"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+    <android.support.constraint.Guideline android:id="@+id/city_gd_row4_bottom" app:layout_constraintGuide_percent=".7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="#10FFFFFF"
+        app:layout_constraintLeft_toRightOf="@id/city_gd_spinners_clmn1_left"
+        app:layout_constraintRight_toLeftOf="@id/city_gd_spinners_clmn2_right"
+        app:layout_constraintTop_toBottomOf="@id/city_gd_row4_top"
+        app:layout_constraintBottom_toTopOf="@id/city_gd_row4_bottom">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="3sp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="      "
+                android:textSize="10sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pressure   "
+                android:textColor="@color/yellow"
+                android:textSize="13sp" />
+            <TextView android:id="@+id/city_txtv_pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="13sp"
+                android:textColor="@color/yellow"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:textSize="13sp"
+                android:textColor="@color/yellow"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
