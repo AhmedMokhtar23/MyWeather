@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me5atech.myweather">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
     <application
         android:allowBackup="true"
@@ -23,7 +23,19 @@
         </activity>
         <activity android:name=".Views.Main.Main_Activity" />
         <activity android:name=".Views.City.City_Activity" />
-        <activity android:name=".Views.ContactUs.ContactUs_Activity" android:theme="@style/Base.Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".Views.ContactUs.ContactUs_Activity"
+            android:theme="@style/Base.Theme.AppCompat.Dialog" />
+
+        <receiver android:name=".WeatherWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/weather_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

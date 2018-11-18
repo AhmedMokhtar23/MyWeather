@@ -5,7 +5,9 @@ import android.support.annotation.NonNull;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Weather_Period {
+import java.io.Serializable;
+
+public class Weather_Period implements Serializable {
     private String period;
     private int temp_average, temp_max, temp_min, wind_speed,wind_degree,humidity,pressur;
 
