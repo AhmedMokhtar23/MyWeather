@@ -23,7 +23,7 @@ public class Weather_City {
         for(int i=0;i<jsonArray.length();){
             ArrayList<JSONObject> jsonObjects = new ArrayList<>();
             int j = i;
-            while (j < 40 && jsonArray.getJSONObject(i).getString("dt_txt").substring(0,jsonArray.getJSONObject(i).getString("dt_txt").indexOf(" ")).equals(
+            while (j < jsonArray.length() && jsonArray.getJSONObject(i).getString("dt_txt").substring(0,jsonArray.getJSONObject(i).getString("dt_txt").indexOf(" ")).equals(
                     jsonArray.getJSONObject(j).getString("dt_txt").substring(0,jsonArray.getJSONObject(i).getString("dt_txt").indexOf(" "))
             )){
                 jsonObjects.add(jsonArray.getJSONObject(j));

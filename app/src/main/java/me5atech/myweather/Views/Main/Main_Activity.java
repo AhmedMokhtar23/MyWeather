@@ -8,6 +8,7 @@ import android.widget.Button;
 
 import me5atech.myweather.R;
 import me5atech.myweather.Views.City.City_Activity;
+import me5atech.myweather.Views.ContactUs.ContactUs_Activity;
 import me5atech.myweather.Views.MyActivity;
 
 public class Main_Activity extends MyActivity {
@@ -20,7 +21,7 @@ public class Main_Activity extends MyActivity {
     }
 
     public void contact_us(View v){
-
+        startActivity(new Intent(this,ContactUs_Activity.class));
     }
 
     public void select_city(View v){

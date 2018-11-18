@@ -66,13 +66,6 @@ public class Splash_Controller {
         }
     }
 
-    private boolean internet_available() {
-        return ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_NETWORK_STATE)
-                == PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(activity, Manifest.permission.INTERNET)
-                        == PackageManager.PERMISSION_GRANTED;
-    }
-
     private boolean storage_available() {
         return ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE)
                 == PackageManager.PERMISSION_GRANTED &&

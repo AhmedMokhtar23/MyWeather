@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".Views.Main.Main_Activity" />
         <activity android:name=".Views.City.City_Activity" />
+        <activity android:name=".Views.ContactUs.ContactUs_Activity" android:theme="@style/Base.Theme.AppCompat.Dialog" />
     </application>
 
 </manifest>

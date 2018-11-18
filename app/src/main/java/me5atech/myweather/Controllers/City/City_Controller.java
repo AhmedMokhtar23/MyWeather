@@ -41,7 +41,7 @@ public class City_Controller {
     }
 
     public void get_city(final String city){
-        StringRequest request = new StringRequest(Request.Method.GET,"http://api.openweathermap.org/data/2.5/forecast?id=" + Globals.City_Codes.get(city.toLowerCase()) + "&APPID=f56a2e82cdf2133ec347e9afc4933c3a",
+        StringRequest request = new StringRequest(Request.Method.GET,"http://api.openweathermap.org/data/2.5/forecast?id=" + Globals.City_Codes.get(city.toLowerCase()) + Globals.AppId,
                 new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -51,6 +51,8 @@ public class City_Controller {
                     UI.on_loadedFromAPI(city);
                 }catch (Exception e){
                     Log.d(Globals.LOG_TAG,e.getMessage());
+                    UI.onFailed();
+                    e.printStackTrace();
                 }
 
             }
@@ -61,7 +63,6 @@ public class City_Controller {
             }
         });
         request.setTag("");
-        //request.setRetryPolicy(new DefaultRetryPolicy(1000,5,2));
         requestQueue.add(request);
     }
 
@@ -71,19 +72,8 @@ public class City_Controller {
             FileWriter fileWriter = new FileWriter(f);
             fileWriter.write(json);
             fileWriter.close();
-            /*
-            while (json.length() > 0){
-                if(json.length() >= 1000){
-                    fileWriter.append(json.substring(0,1000));
-                    json = json.substring(1000);
-                }else{
-                    fileWriter.write(json);
-                    json = "";
-                }
-            }
-            */
         }catch (Exception e){
-            Log.d(Globals.LOG_TAG,e.getMessage());
+            UI.onFailed();
         }
 
     }
@@ -102,7 +92,7 @@ public class City_Controller {
                 Weather_City w = new Weather_City(new JSONObject(s));
                 UI.onloadedFromStorage(w);
             }catch (Exception e){
-                Log.d(Globals.LOG_TAG,e.getMessage());
+                UI.onFailed();
             }
 
         }else{

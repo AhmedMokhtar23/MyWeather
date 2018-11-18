@@ -102,8 +102,8 @@ public class City_Activity extends MyActivity implements City_Interface {
 
     @Override
     public void onFailed() {
-        show_message("Ther Is No Connection And There Is No Offline Data",R.drawable.ic_error);
         abort_connection(null);
+        show_message("Ther Is No Connection And There Is No Offline Data",R.drawable.ic_error);
     }
 
     private void on_loaded(Weather_City city){
