@@ -25,13 +25,21 @@ public class Splash_Activity extends MyActivity implements Splash_Interface {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_layout);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         controller = new Splash_Controller(this);
-        new Timer().schedule(new TimerTask() {
+        if(Globals.City_Codes.isEmpty()) {new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 controller.can_start();
             }
-        },300);
+        },300);} else{
+            Globals.City_Codes.clear();
+            onBackPressed();
+        }
     }
 
     @Override

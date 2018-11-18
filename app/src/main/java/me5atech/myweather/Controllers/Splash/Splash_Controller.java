@@ -25,17 +25,17 @@ public class Splash_Controller {
 
     public void can_start() {
         ArrayList<String> permissions = new ArrayList<>();
+
         if (!storage_available()) {
             permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
             permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
         }
+
         Globals.City_Codes.put("cairo", "360630");
         Globals.City_Codes.put("ismailia", "361055");
         Globals.City_Codes.put("suez", "359796");
         Globals.City_Codes.put("luxor", "360502");
         Globals.City_Codes.put("port said", "358619");
-        UI.on_success();
         if (!permissions.isEmpty()) {
             UI.request_permissions(permissions.toArray(new String[permissions.size()]));
         } else {
@@ -72,6 +72,8 @@ public class Splash_Controller {
                 ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         == PackageManager.PERMISSION_GRANTED;
     }
+
+
 }
 
 

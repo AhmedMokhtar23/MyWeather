@@ -1,4 +1,4 @@
-package me5atech.myweather;
+package me5atech.myweather.Views;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -8,6 +8,7 @@ import android.widget.RemoteViews;
 import android.widget.TextView;
 
 import me5atech.myweather.Models.Weather_Period;
+import me5atech.myweather.R;
 import me5atech.myweather.Views.MyActivity;
 
 /**

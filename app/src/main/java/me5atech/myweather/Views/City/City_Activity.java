@@ -2,7 +2,6 @@ package me5atech.myweather.Views.City;
 
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,7 +21,7 @@ import me5atech.myweather.Models.Weather_City;
 import me5atech.myweather.Models.Weather_Period;
 import me5atech.myweather.R;
 import me5atech.myweather.Views.MyActivity;
-import me5atech.myweather.WeatherWidget;
+import me5atech.myweather.Views.WeatherWidget;
 
 public class City_Activity extends MyActivity implements City_Interface {
 
